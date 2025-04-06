@@ -4,7 +4,7 @@ import re
 def cargar_documentos(carpeta):
     documentos = {}
     for filename in os.listdir(carpeta):
-        if filename.endswith('.txt'):  # Indentación corregida
+        if filename.endswith('.txt'): 
             with open(os.path.join(carpeta, filename), 'r', encoding='utf-8') as file:
                 documentos[filename] = file.read()
     return documentos
