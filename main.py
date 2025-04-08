@@ -3,7 +3,7 @@ from src.hash_table import HashTable
 from src.bloom_filter import BloomFilter
 from src.similitud import calcular_similitud
 from src.sorting import merge_sort
-from src.graficos import generar_graficos
+from src.graficos import generar_grafo
 
 def main():
     # Paso 1: Cargar los Documentos
@@ -43,7 +43,7 @@ def main():
         print(f"Similitud entre {doc1} y {doc2}: {sim:.2f}")
     
     # Generar gráficos
-    generar_graficos(similitudes_ordenadas)
+    generar_grafo(similitudes)
 
 if __name__ == "__main__":
     main()
