@@ -1,17 +1,96 @@
-# Detector de Plagio
+--Archivos en la Carpeta src--
 
-Este proyecto implementa un sistema de detección de plagio utilizando tablas hash y algoritmos de ordenamiento. 
+**bloom_filter.py**
+Descripción: Implementa la clase BloomFilter, una estructura de datos probabilística utilizada para verificar si un elemento está presente en un conjunto. Permite agregar elementos y comprobar su existencia, aunque puede dar falsos positivos.
 
-## Estructura del Proyecto
-- documentos/: Contiene los trabajos estudiantiles en formato .txt.
-- src/: Código fuente modular.
-- tests/: Casos de prueba.
-- resultados/: Resultados generados por el sistema.
+**hash_table.py**
+Descripción: Implementa la clase HashTable, que permite almacenar pares clave-valor. Proporciona métodos para insertar n-gramas, obtener su conteo y listar todas las claves almacenadas.
 
-## Cómo Ejecutar
-1. Coloca los documentos en la carpeta 'documentos/'.
-2. Ejecuta el archivo 'main.py'.
+**preprocesamiento.py**
+Descripción: Contiene funciones para cargar documentos de texto desde una carpeta y tokenizarlos en n-gramas. Incluye la función cargar_documentos para leer archivos y tokenizar para dividir el texto en n-gramas.
 
+**similitud.py**
+Descripción: Implementa la función calcular_similitud, que calcula la similitud entre dos documentos representados como tablas hash. Utiliza el concepto de intersección y unión para determinar cuán similares son los documentos.
+
+**sorting.py**
+Descripción: Contiene la función merge_sort, que implementa el algoritmo de ordenamiento por mezcla. Permite ordenar listas de elementos de manera ascendente o descendente, y puede utilizar una clave personalizada para el ordenamiento.
+
+**graficos.py**
+Descripción: Contiene la función generar_graficos, que crea gráficos de barras horizontales para visualizar los niveles de similitud entre documentos. Guarda los gráficos generados en un directorio específico.
+
+--Archivos en la Carpeta test--
+
+**test_bloom_filter.py**
+Descripción: Contiene pruebas unitarias para la clase BloomFilter. Verifica la correcta inicialización, adición de elementos, comprobación de existencia y consistencia de hash.
+
+**test_hash_table.py**
+Descripción: Contiene pruebas unitarias para la clase HashTable. Verifica la correcta inserción de n-gramas, obtención de conteos, y la funcionalidad del método keys.
+
+**test_preprocesamiento.py**
+Descripción: Contiene pruebas unitarias para las funciones en preprocesamiento.py. Verifica la carga de documentos desde una carpeta y la correcta tokenización de texto en n-gramas.
+
+**test_similitud.py**
+Descripción: Contiene pruebas unitarias para la función calcular_similitud. Verifica el cálculo de similitud entre documentos, incluyendo casos de documentos idénticos, diferentes y parcialmente similares.
+
+**test_sorting.py**
+Descripción: Contiene pruebas unitarias para la función merge_sort. Verifica el correcto ordenamiento de listas de números, cadenas y tuplas, así como el manejo de listas vacías y con elementos duplicados.
+
+**test_graficos.py**
+Descripción: Contiene pruebas unitarias para la función generar_graficos. Verifica que la función maneje correctamente entradas vacías, genere gráficos para entradas válidas y cree directorios según sea necesario.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Este proyecto tiene como objetivo analizar la similitud entre documentos de texto utilizando técnicas de procesamiento de lenguaje natural (NLP). Se implementan estructuras de datos eficientes como tablas hash y filtros de Bloom para almacenar y comparar n-gramas extraídos de los documentos. Además, se generan gráficos visuales que representan el nivel de similitud entre los documentos analizados.
+
+Estructura del Proyecto:
+/project-root
+│
+├── src/
+│   ├── bloom_filter.py          # Implementación de la clase BloomFilter.
+│   ├── hash_table.py            # Implementación de la clase HashTable.
+│   ├── preprocesamiento.py      # Funciones para cargar y tokenizar documentos.
+│   ├── similitud.py             # Función para calcular la similitud entre documentos.
+│   ├── sorting.py               # Implementación del algoritmo de ordenamiento por mezcla.
+│   └── graficos.py              # Función para generar gráficos de similitud.
+│
+├── test/
+│   ├── test_bloom_filter.py     # Pruebas unitarias para BloomFilter.
+│   ├── test_hash_table.py       # Pruebas unitarias para HashTable.
+│   ├── test_preprocesamiento.py # Pruebas unitarias para funciones de preprocesamiento.
+│   ├── test_similitud.py        # Pruebas unitarias para calcular similitud.
+│   ├── test_sorting.py          # Pruebas unitarias para el algoritmo de ordenamiento.
+│   └── test_graficos.py         # Pruebas unitarias para la generación de gráficos.
+│
+├── requirements.txt              # Dependencias del proyecto.
+└── main.py                       # Archivo principal para ejecutar el análisis de similitud.
+
+--Requisitos--
+Para ejecutar este proyecto, asegúrate de tener instaladas las siguientes dependencias:
+- numpy
+- matplotlib
+Puedes instalar las dependencias utilizando el siguiente comando:
+- pip install -r requirements.txt
+
+--Uso--
+1. Carga de Documentos: Coloca los documentos de texto que deseas analizar en una carpeta específica.
+2. Ejecutar el Análisis: Modifica la variable carpeta_documentos en main.py para apuntar a la carpeta que contiene tus documentos. Luego, ejecuta el archivo principal:
+- python main.py
+3. Visualización de Resultados: Los resultados de similitud se imprimirán en la consola y se generarán gráficos que se guardarán en el directorio resultados/graficos.
+
+--Pruebas--
+El proyecto incluye pruebas unitarias para cada componente. Para ejecutar las pruebas, asegúrate de tener pytest instalado y ejecuta el siguiente comando en la raíz del proyecto:
+- pytest
+
+--Contribuciones--
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
+3. Realiza tus cambios y haz commit (git commit -m 'Añadir nueva funcionalidad').
+4. Envía un pull request.
+
+--Licencia--
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+--Contacto--
+Para preguntas o comentarios, por favor contacta a [yulian.marin@tecdesoftware.edu.mx, cassiel.hernandez@tecdesoftware.edu.mx y a carlos.poxtan@tecdesoftware.edu.mx].
 
 
 

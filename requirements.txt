@@ -1,2 +1,7 @@
-numpy
-matplotlib
+tkinter
+networkx
+datetime
+os
+matplotlib.pylot
+csv
+re
