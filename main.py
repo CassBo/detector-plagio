@@ -3,6 +3,7 @@ from src.hash_table import HashTable
 from src.bloom_filter import BloomFilter
 from src.similitud import calcular_similitud
 from src.sorting import merge_sort
+from src.exportar import exportar_similitudes_a_csv
 from src.graficos import generar_grafo
 
 def main():
@@ -42,7 +43,10 @@ def main():
     for doc1, doc2, sim in similitudes_ordenadas[:N]:
         print(f"Similitud entre {doc1} y {doc2}: {sim:.2f}")
     
-    # Generar gráficos
+    #Paso 7: Exportar a CSV
+    exportar_similitudes_a_csv(similitudes_ordenadas)
+    
+    #Paso 8: Generar un Grafo con los Documentos
     generar_grafo(similitudes)
 
 if __name__ == "__main__":
